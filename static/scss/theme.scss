@@ -1,0 +1,240 @@
+@import "../bootstrap/scss/functions";
+
+$white: #ffffff;
+
+$light: #F9EDE2;
+$dark: #000000;
+$primary: #64A3DD;
+$secondary: #491156;
+$info: #3A8AD4;
+$success: #10a103;
+$warning: #f7c104;
+$danger: #e92500;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'Dumbledor1';
+    src: url(/static/fonts/dumbledor1/dum1.ttf) format('truetype');
+}
+
+$font-family-base: "Lato", sans-serif;
+$headings-font-family: "Outfit", sans-serif;
+
+@import "../bootstrap/scss/bootstrap";
+
+[data-bs-theme=dark] {
+    --bs-body-bg: #000;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+.navbar-content-wrapper {
+    display: flex;
+    column-gap: 1em;
+
+
+    & .nav-link {
+        padding: .5em 1em;
+        background-color: rgba(255, 255, 255, .15);
+        border-radius: 2em;
+        backdrop-filter: blur(6px);
+        transition: transform 350ms cubic-bezier(.75, .15, .29, .96), background-color 200ms ease-in-out;
+        --el-transform: 0px;
+        transform: translateX(var(--el-transform));
+
+        &:hover,
+        &:focus {
+            background-color: rgba(255, 255, 255, .25);
+
+        }
+
+
+        &:nth-child(1) {
+            z-index: 3;
+            --el-transform: 256px;
+        }
+
+        &:nth-child(2) {
+            z-index: 2;
+            --el-transform: 124px;
+        }
+
+        &:nth-child(3) {
+            z-index: 1
+        }
+
+    }
+
+    &:hover,
+    &:has(.nav-link:focus) {
+
+        & .nav-link {
+            transform: translateX(0)
+        }
+
+    }
+}
+
+.project-card {
+    aspect-ratio: 10/16;
+    height: 15rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main[page-content="cabinet-3d-model"] {
+
+    & canvas {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+    }
+
+    & .canvas-overlay-content {
+
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        pointer-events: none;
+
+        & .header-wrapper {
+
+            position: absolute;
+            top: 12vh;
+            left: 50vw;
+            transform: translateX(-50%);
+            width: 80vw;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & h1 {
+
+                width: fit-content;
+
+                font-family: "Dumbledor1";
+                font-size: 6em;
+                text-align: center;
+
+                background: radial-gradient(#eee 0%, transparent 0%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent;
+                background-clip: text !important;
+
+                position: relative;
+
+                & .underline {
+                    display: block;
+
+                    width: 100%;
+                    height: 2px;
+
+                    background: linear-gradient(to right, black 0%, black 50%, white 50%, white 50%, black 50%, black 100%);
+
+                }
+
+            }
+
+        }
+
+        & .annotation-wrapper {
+
+            position: absolute;
+
+            max-width: 266px;
+
+            &.xl {
+                max-width: 366px;
+            }
+
+            &:not(.invert) {
+                border-left: solid white 1.5px;
+                padding-left: 16px;
+            }
+
+            &.invert {
+                border-right: solid white 1.5px;
+                padding-right: 16px;
+
+                & * {
+                    text-align: right
+                }
+            }
+
+            &.top {
+                border:none;
+                padding:none;
+
+                border-top: solid white 1.5px;
+                padding-top: 16px;
+
+                max-width:60vw;
+
+                & * {
+                    text-align: center
+                }
+                
+                
+            }
+
+            & * {
+                font-family: serif !important;
+            }
+
+            & h3 {
+                font-size: 3em
+            }
+
+            &.laptop {
+                left: 65vw;
+                top: 16vh;
+            }
+
+            &.book {
+                left: 22vw;
+                top: 43vh;
+            }
+
+            &.lanyard {
+                left: 70vw;
+                top: 43vh;
+            }
+
+            &.ma3 {
+                left: 37vw;
+                top: 77vh;
+            }
+
+            &.necker {
+                left: 35vw;
+                top: 57vh;
+            }
+
+            &.knives {
+                left: 21vw;
+                top: 56vh;
+            }
+
+            &.badges {
+                left: 69vw;
+                top: 37vh;
+            }
+
+            &.lxtape {
+                left: 27vw;
+                top: 48vh;
+            }
+
+        }
+
+    }
+
+}

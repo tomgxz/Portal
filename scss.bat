@@ -1,0 +1,1 @@
+call sass ".\static\scss\theme.scss" ".\static\css\build.css"
