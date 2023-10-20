@@ -61,7 +61,6 @@ const animate = () => {
 
     TWEEN.update();
     renderer.render(scene, camera);
-    greenScreenMaterial.update();
     //stats.update()
 }
 

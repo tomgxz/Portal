@@ -32,6 +32,57 @@ body {
     overflow-x: hidden !important;
 }
 
+
+#opacity-mask {
+    position: fixed !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    z-index: 999 !important;
+    background-color: #000 !important;
+}
+
+#page-loader {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & #page-loader-content {
+        z-index: 1001;
+        margin-top: 1rem;
+    }
+
+    & #page-loader-bar {
+        height: 3px;
+        width: 0%;
+        margin-right: 40%;
+        background: white;
+        border-radius: 1em;
+    }
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0px;
+    background-color: white;
+}
+
+
 .navbar-content-wrapper {
     display: flex;
     column-gap: 1em;
@@ -170,19 +221,19 @@ main[page-content="cabinet-3d-model"] {
             }
 
             &.top {
-                border:none;
-                padding:none;
+                border: none;
+                padding: none;
 
                 border-top: solid white 1.5px;
                 padding-top: 16px;
 
-                max-width:60vw;
+                max-width: 60vw;
 
                 & * {
                     text-align: center
                 }
-                
-                
+
+
             }
 
             & * {
