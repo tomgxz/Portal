@@ -217,6 +217,11 @@ $(window).bind("wheel",function(e) {
 
 });
 
+$(window).keydown(function(e) {
+    if (["ArrowRight"," "].includes(e.key)) changepos(2000,true)
+    if (["ArrowLeft"].includes(e.key)) changepos(2000,false)
+})
+
 window.addEventListener("mousemove", e => {
     if (cammoving) return
 
