@@ -1,1 +1,1 @@
-call sass ".\static\scss\theme.scss" ".\static\css\build.css"
+call sass ".\Portal\static\scss\theme.scss" ".\Portal\static\css\build.css"

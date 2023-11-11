@@ -11814,4 +11814,10 @@ main[page-content=cabinet-3d-model] .canvas-overlay-content .annotation-wrapper.
   top: 48vh;
 }
 
+.quote {
+  padding-left: 1rem;
+  border-left: solid 5px gray;
+  font-style: italic;
+}
+
 /*# sourceMappingURL=build.css.map */
