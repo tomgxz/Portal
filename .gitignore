@@ -1,3 +1,4 @@
 *.glb
 *.mtl
 *.obj
+.DS_Store
